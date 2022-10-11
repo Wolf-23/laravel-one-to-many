@@ -16,6 +16,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
                 <th scope="col">Slug</th>
+                <th scope="col">Numero Post</th>
                 <th scope="col" class="text-center">Gestisci</th>
               </tr>
             </thead>
@@ -25,15 +26,10 @@
                     <th scope="row">{{$category->id}}</th>
                     <td>{{$category->name}}</td>
                     <td>{{$category->slug}}</td>
-                    {{-- <td class="text-center">
-                        <a href="{{route('admin.posts.show', ['post' => $post->id])}}" class="btn btn-success">Vedi</a>
-                        <a href="{{route('admin.posts.edit', ['post' => $post->id])}}"  class="btn btn-warning">Modifica</a>
-                        <form class="d-inline-block" action="{{route('admin.posts.destroy', ['post' => $post])}}" method="POST">
-                          @csrf
-                          @method('DELETE')
-                          <button type="submit" class="btn btn-danger">Elimina</button>
-                        </form>
-                    </td> --}}
+                    <td>{{count($category->posts)}}</td>
+                    <td class="text-center">
+                        <a href="{{route('admin.categories.show', ['category' => $category->id])}}" class="btn btn-success">Vedi</a>
+                    </td> 
                 </tr>
                 @endforeach
             </tbody>

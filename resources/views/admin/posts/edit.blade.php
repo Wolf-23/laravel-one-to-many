@@ -55,8 +55,9 @@
                 <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror ">
                     <option {{(old('category_id')=='')?'selected':''}} value="">Nessuna Categoria</option>
                     @foreach ($categories as $category)
-                        <option {{(old('category_id', $post->$category->id)==$category->id)?'selected':''}} value="{{$category->id}}">{{$category->name}}</option>
+                    <option {{(old('category_id', $post->category_id)==$category->id)?'selected':''}} value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
+                </select>
                 @error('category_id')
                     <div class='invalid-feedback'>
                         {{$message}}
