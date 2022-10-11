@@ -26,5 +26,6 @@
     @else 
         <h3>Non ci sono post per questa Categoria</h3>
     @endif
+    <a href="{{route('admin.categories.index')}}" class="btn btn-primary mt-3">Vai a tutte le categorie</a>
   </div>
 @endsection
