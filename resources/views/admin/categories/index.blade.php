@@ -26,7 +26,7 @@
                     <th scope="row">{{$category->id}}</th>
                     <td>{{$category->name}}</td>
                     <td>{{$category->slug}}</td>
-                    <td>{{count($category->posts)}}</td>
+                    <td class="px-5">{{count($category->posts)}}</td>
                     <td class="text-center">
                         <a href="{{route('admin.categories.show', ['category' => $category->id])}}" class="btn btn-success">Vedi</a>
                     </td> 
