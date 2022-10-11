@@ -32,11 +32,19 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="{{ route('admin.posts.index') }}">Gestione dei post</a>
-                            </li>
-                        </ul>
+                        <div class="d-flex">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="{{ route('admin.posts.index') }}">Gestione dei post</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="{{ route('admin.categories.index') }}">Gestione delle categorie</a>
+                                </li>
+                            </ul>
+                        </div>
+
 
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
