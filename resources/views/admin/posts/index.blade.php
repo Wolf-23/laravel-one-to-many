@@ -17,6 +17,7 @@
                 <th scope="col">Title</th>
                 <th scope="col">Author</th>
                 <th scope="col">Slug</th>
+                <th scope="col">Category</th>
                 <th scope="col" class="text-center">Gestisci</th>
               </tr>
             </thead>
@@ -27,6 +28,7 @@
                     <td>{{$post->title}}</td>
                     <td>{{$post->author}}</td>
                     <td>{{$post->slug}}</td>
+                    <td>{{($post->category)?$post->category->name:'Nessuna Categoria'}}</td>
                     <td class="text-center">
                         <a href="{{route('admin.posts.show', ['post' => $post->id])}}" class="btn btn-success">Vedi</a>
                         <a href="{{route('admin.posts.edit', ['post' => $post->id])}}"  class="btn btn-warning">Modifica</a>

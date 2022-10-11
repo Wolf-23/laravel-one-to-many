@@ -26,9 +26,9 @@
                 @enderror
             </div>
             {{-- AUTHOR --}}
-            <div class="mb-3">
+            <div class="form-group mb-3">
                 <label for="author" class="form-label">Choose an Author</label>
-                <select name="author" id="author" class="form-select @error('author') is-invalid @enderror ">
+                <select name="author" id="author" class="form-control @error('author') is-invalid @enderror ">
                     <option {{(old('author', $post->author)=='Simone Giusti')?'selected':''}} value="Simone Giusti">Simone Giusti</option>
                     <option {{(old('author', $post->author)=='Alessio Vietri')?'selected':''}} value="Alessio Vietri">Alessio Vietri</option>
                     <option {{(old('author', $post->author)=='Jacopo Damiani')?'selected':''}} value="Jacopo Damiani">Jacopo Damiani</option>
@@ -48,6 +48,20 @@
                         {{$message}}
                     </div>
                 @enderror   
+            </div>
+            {{-- CATEGORY --}}
+            <div class="form-group mb-3">
+                <label for="category_id" class="form-label">Choose a Category</label>
+                <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror ">
+                    <option {{(old('category_id')=='')?'selected':''}} value="">Nessuna Categoria</option>
+                    @foreach ($categories as $category)
+                        <option {{(old('category_id', $post->$category->id)==$category->id)?'selected':''}} value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                @error('category_id')
+                    <div class='invalid-feedback'>
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
             <button type="submit" class="btn btn-success">Applica Modifiche</button>
             <a class="btn btn-primary d-inline-block" href="{{route('admin.posts.index')}}">Annulla</a>
